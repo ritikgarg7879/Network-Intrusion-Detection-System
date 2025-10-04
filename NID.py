@@ -50,7 +50,7 @@ input_data = pd.DataFrame([[
 
 # --- Load Model ---
 model = xgb.XGBClassifier(use_label_encoder=False, eval_metric='logloss')
-model.load_model(r"D:\VIT 2022-26\FINAL YEAR PROJECTS\Network Intrusion Detection System Using Explainble AI\SecurityDatasetXgBoost.json")
+model.load_model("SecurityDatasetXgBoost.json")
 
 # --- Predict & Explain ---
 if st.button("🔍 Predict"):
@@ -70,3 +70,4 @@ if st.button("🔍 Predict"):
     fig, ax = plt.subplots()
     shap.plots.waterfall(shap_values[0], show=False)
     st.pyplot(fig)
+
